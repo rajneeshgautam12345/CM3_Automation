@@ -121,7 +121,7 @@ public class EaseSteps extends E2ESteps {
 		} else if (order.equals("MOVE")) {
 			referencePON = "RGMOVETEST22";
 		} else if (order.equals("TRANSFER")) {
-			referencePON = "OVCCOMBOINSREF";
+			referencePON = "UNITRANSFERREF";
 		} else if (order.equals("UNI_Disconnect")) {
 			referencePON = "UNIDISCO";
 		} else if (order.equals("EVC_Disconnect")) {
