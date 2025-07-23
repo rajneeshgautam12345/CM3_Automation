@@ -344,14 +344,15 @@ public class EaseStepDefinition {
 	public void user_submit_the_uni_transfer_order_by_changing_field(String string) {
 		String pon = BaseStep.readExcelData("TRANSFER_Order", 1, 1) + AutomationConstants.randomNo;
 		String service = BaseStep.readExcelData("TRANSFER_Order", 2, 1);
+		String specCode = BaseStep.readExcelData("TRANSFER_Order", 3, 1);
 		String ncCodeValue = BaseStep.readExcelData("TRANSFER_Order", 4, 1);
 		String nciCodeValue = BaseStep.readExcelData("TRANSFER_Order", 5, 1);
 		String secNciValue = BaseStep.readExcelData("TRANSFER_Order", 6, 1);
-		String remarks = BaseStep.readExcelData("TRANSFER_Order", 7, 1);
-		String espValue = BaseStep.readExcelData("", 7, 1);
+		String remarks = BaseStep.readExcelData("TRANSFER_Order", 8, 1);
+		String espValue = BaseStep.readExcelData("TRANSFER_Order", 7, 1);
 		
 		easeSteps.enterOrderDetails(pon, "MS02", "T");
-		easeSteps.enterASRPageDetails("MCI", "08/25/2025", "", remarks, "", service);
+		easeSteps.enterASRPageDetails("MCI", "08/25/2025", specCode, remarks, "", service);
 		easeSteps.enterSESDetails("", ncCodeValue, nciCodeValue, secNciValue,espValue);
 		//easeSteps.enterAddressDetailsInSESPage("", ncCodeValue, nciCodeValue, secNciValue);
 		easeSteps.clickOnValidateButton_and_validateErrorText();
