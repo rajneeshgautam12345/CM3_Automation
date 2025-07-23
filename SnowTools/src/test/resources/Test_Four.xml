@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container name="root">
+	<container name="Environments">
+		<container name="TEST2">
+				<field name="url" value="https://lumn--itv2.sandbox.lightning.force.com/lightning/page/home" type="mandatory"></field>
+			<container name="LoginPage">
+				<container name="Valid">
+				    <field name="tbx_uname" value="AC67376" type="mandatory" />
+				    <field name="tbx_pwd" value="Testinglevel@95" type="mandatory" />
+<!-- 				    	<field name="tbx_username" value="sfatst15@centurylink.com" type="mandatory" /> -->
+<!-- 					    <field name="tbx_password" value="Chemist2024Marcy!15proved#" type="mandatory" /> -->
+<!-- 					<field name="tbx_username" value="SFATST40@centurylink.com" type="mandatory" /> -->
+<!-- 					<field name="tbx_password" value="M*TAaHuwce2X$x" type="mandatory" /> -->
+					<field name="tbx_username" value="rajneesh.k.gautam@lumen.com" type="mandatory" />
+					<field name="tbx_password" value="Testinglevel@95" type="mandatory" />
+<!-- 					<field name="tbx_username" value="sfatst31@centurylink.com" type="mandatory" /> -->
+<!-- 					<field name="tbx_password" value="Gradings66pok!ng60Levi#" type="mandatory" /> -->
+				</container>
+			</container>   
+			   <field name="sdfurl" value="https://ctl-enterprise--test2.sandbox.my.site.com/ltngOut/SingleDigitalForm?scenarioId="></field>
+			   <field name="dopurl" value="https://digital-order-platform-env2.kubeodc-test.corp.intranet/"></field>
+				<field name="Swift" value="http://swiftenv2/" type="mandatory"></field>
+				<field name="swiftCusturl" value="http://swiftenv2/Customer/1018239"></field>
+				<field name="Metastorm" value="http://mbpm-env2.level3.com/metastormsso/Default.aspx" type="mandatory"></field>
+				<field name="GCA" value="http://revenueservicetest/WebUI/ENV2/RevenueCreditAuthWeb/Order/List " type="mandatory"></field>
+				<field name="ISM" value="http://ism-env2/ism/#search" type="mandatory"></field>
+				<field name="Mesh" value="https://sasi-test2.rke-odc-test.corp.intranet" type="mandatory"></field>	
+				<field name="ACT" value="http://act-env2.idc1.level3.com:8081" type="mandatory"></field>
+				<field name="ASRI" value="http://amd03adc-uat.adc1.level3.com:20300/AmdocsOSS/Portal/login.html" type="mandatory"></field>
+				<field name="FD" value="http://workmate-svc-test2.kubeodc-test.corp.intranet/RestService/Enterprise/v4/Work/task/advancedSearch?include=p,aa" type="mandatory"></field>
+				<field name="FlightDeck" value="https://flightdeck-ui-test2.rke-odc-test.corp.intranet/#/task" type="mandatory"></field>
+				<field name="ServiceNow" value="https://lumentest2.service-now.com/" type="mandatory"></field>
+		       <field name="rocUrl" value="http://rocinternal-env2.level3.com/requests"></field>
+		       <field name="EASE" value="https://test2asrvfo.test.intranet/sso?type=AzureAD" type="mandatory"></field>
+			   <field name="Orchestrator" value="https://test2asrorch.test.intranet/sso?type=AzureAD" type="mandatory"></field>
+					
+		</container>
+		
+		<container name="TEST1">
+				<field name="url" value="https://lumn--itv1.sandbox.lightning.force.com/lightning/page/home" type="mandatory"></field>
+			<container name="LoginPage">
+				<container name="Valid">
+				    <field name="tbx_uname" value="AC67376" type="mandatory" />
+<!-- 					<field name="tbx_username" value="SFATST40@centurylink.com" type="mandatory" /> -->
+<!-- 					<field name="tbx_password" value="M*TAaHuwce2X$x" type="mandatory" /> -->
+					<field name="tbx_username" value="rajneesh.k.gautam@lumen.com" type="mandatory" />
+					<field name="tbx_password" value="Testinglevel@95" type="mandatory" />
+					
+				</container>
+			</container>
+			    <field name="tdfUrl" value="https://ctl-enterprise--test1.sandbox.my.site.com/ltngOut/TechnicalDesign?scenarioId="></field>
+			    <field name="sdfurl" value="https://ctl-enterprise--test1.sandbox.my.site.com/ltngOut/SingleDigitalForm?scenarioId="></field>
+			    <field name="dopurl" value="https://digital-order-platform-env1.kubeodc-test.corp.intranet/"></field>
+				<field name="Swift" value="http://swiftenv1/" type="mandatory"></field>
+				<field name="Metastorm" value="http://mbpm-env1.level3.com/metastormsso/Default.aspx" type="mandatory"></field>
+				<field name="GCA" value="http://revenueservicetest/WebUI/ENV1/RevenueCreditAuthWeb/Order/List " type="mandatory"></field>
+				<field name="ISM" value="http://ism-env1/ism/#search" type="mandatory"></field>
+				<field name="Mesh" value="https://sasi-test1.rke-odc-test.corp.intranet/" type="mandatory"></field>	
+				<field name="ACT" value="http://act-env1.idc1.level3.com:8081" type="mandatory"></field>
+				<field name="ASRI" value="http://amd01adc-uat.adc1.level3.com:20100/AmdocsOSS/Portal/login.html" type="mandatory"></field>
+				<field name="FD" value="http://workmate-svc-test1.kubeodc-test.corp.intranet/RestService/Enterprise/v4/Work/task/advancedSearch?include=p,aa" type="mandatory"></field>
+                <field name="FlightDeck" value="https://flightdeck-ui-test1.rke-odc-test.corp.intranet/" type="mandatory"></field>			
+			,   <field name="ServiceNow" value="https://lumentest.service-now.com/" type="mandatory"></field>	
+			    <field name="rocUrl" value="http://rocinternal-env1.level3.com/requests"></field>	
+			    <field name="EASE" value="https://test1asrvfo.test.intranet/sso?type=AzureAD" type="mandatory"></field>	
+			     <field name="Orchestrator" value="https://test1asrorch.test.intranet/sso?type=AzureAD" type="mandatory"></field>
+				
+		</container>
+		
+		<container name="TEST4">
+				<field name="url" value="https://lumn--e2e.sandbox.lightning.force.com/lightning/page/home" type="mandatory"></field>
+			<container name="LoginPage">
+				<container name="Valid">
+				    <field name="tbx_uname" value="AC67376" type="mandatory" />
+<!-- 				    	<field name="tbx_username" value="sfatst15@centurylink.com" type="mandatory" /> -->
+<!-- 					    <field name="tbx_password" value="Chemist2024Marcy!15proved#" type="mandatory" /> -->
+<!-- 					<field name="tbx_username" value="SFATST40@centurylink.com" type="mandatory" /> -->
+<!-- 					<field name="tbx_password" value="M*TAaHuwce2X$x" type="mandatory" /> -->
+					<field name="tbx_username" value="rajneesh.k.gautam@lumen.com" type="mandatory" />
+					<field name="tbx_password" value="Testinglevel@95" type="mandatory" />
+					
+				</container>
+			</container>
+			    <field name="tdfUrl" value="https://ctl-enterprise--test4.sandbox.my.site.com/ltngOut/TechnicalDesign?scenarioId="></field>
+			    <field name="sdfurl" value="https://ctl-enterprise--test4.sandbox.my.site.com/ltngOut/SingleDigitalForm?scenarioId="></field>
+			    <field name="dopurl" value="https://digital-order-platform-env4.kubeodc-test.corp.intranet/"></field>
+				<field name="Swift" value="http://swiftenv4/" type="mandatory"></field>
+				<field name="swiftCusturl" value="http://swiftenv4/Customer/1018239"></field>
+				<field name="Metastorm" value="http://mbpm-env4.level3.com/metastormsso/Default.aspx" type="mandatory"></field>
+				<field name="GCA" value="http://revenueservicetest/WebUI/ENV4/RevenueCreditAuthWeb/Order/List " type="mandatory"></field>
+				<field name="ISM" value="http://ism-env4/ism/#search" type="mandatory"></field>
+				<field name="Mesh" value="https://sasi-test4.kubeodc-test.corp.intranet" type="mandatory"></field>	
+				<field name="ACT" value="http://act-env4.idc1.level3.com:8081" type="mandatory"></field>
+				<field name="ASRI" value="http://amd07adc-uat.adc1.level3.com:20700/AmdocsOSS/Portal/login.html" type="mandatory"></field>
+				<field name="FD" value="http://workmate-svc-test4.kubeodc-test.corp.intranet/RestService/Enterprise/v4/Work/task/advancedSearch?include=p,aa" type="mandatory"></field>
+			    <field name="FlightDeck" value="http://flightdeck-ui-test4.kubeodc-test.corp.intranet/#/auth/login" type="mandatory"></field>
+			,   <field name="ServiceNow" value="https://lumentest4.service-now.com/" type="mandatory"></field>
+			     <field name="EASE" value="https://test4asrvfo.test.intranet/sso?type=AzureAD" type="mandatory"></field>	
+			    <field name="rocUrl" value="http://rocinternal-env4.level3.com/requests"></field>	
+			    <container name="Ease">
+<!-- 					<field name="tbx_password" value="Mumtaz@123" type="mandatory" /> -->
+				</container>
+			<container name= "AsriLoginPage">
+				<container name= "logical">
+<!-- 					<field name="tbx_username" value="AA88318" type="mandatory"></field> -->
+				</container>
+				<container name= "logical2">
+<!-- 							<field name="tbx_username" value="SFATST31" type="mandatory"></field> -->
+							<field name="tbx_password" value="Gradings66pok!ng60Levi" type="mandatory"></field>
+				</container>
+			</container>
+		</container>
+	</container>
+	
+	<container name="CommonData">
+<!-- 		<container name= "Tasks"> -->
+<!-- 			<field name="opportunity_name" value="Offshore_Test_Opportunity" type="mandatory"></field> -->
+<!-- 			<field name="scenario_name" value="TestScenario" type="mandatory"></field> -->
+<!-- 		</container> -->
+		<container name= "Manage Tasks">
+			<container name="Select Location">
+				<field name="lbl_Assigned_Workbook" value="Local DSC CME - LQ" type="mandatory"></field>
+			</container>
+				<container name="Select Location">
+				<field name="lbl_Assigned_Workbook" value="Local DSC CME - LQ" type="mandatory"></field>
+			</container>
+			<container name="Assign Installation Request">
+				<field name="sel_Users" value="anderson, brian (anderson.brian)" type="mandatory"></field>
+			</container>
+		</container>
+	</container>		
+</container>	
