@@ -675,7 +675,20 @@ public class FlightDeckStepDefinition {
 				flightDecksteps.waitABit(2000);
 				flightDecksteps.userValidateTaskName(taskName);
 				taskStatus = flightDecksteps.userValidateTaskStatus(taskName);
-				flightDecksteps.waitABit(2000);
+				
+				if(taskStatus.equals("Failed"))
+				{
+					flightDecksteps.User_Search_And_Open_Task(taskName);
+					flightDecksteps.userOpenTasksMoreMenuOption();
+					flightDecksteps.userSelfAssignTask();
+					flightDecksteps.closeTaskPagePopupBar();
+					flightDecksteps.completeTask();
+					flightDecksteps.closeTaskPagePopupBar();
+					flightDecksteps.closedOpenedTask();
+					flightDecksteps.switchBackTSearchResultSection();			
+					flightDecksteps.waitABit(10000);
+				}
+				flightDecksteps.waitABit(10000);
 			}
 			taskStatus = "In-Progress";
 			flightDecksteps.userValidateTaskIsInCompletedStatus(taskName);
@@ -688,6 +701,52 @@ public class FlightDeckStepDefinition {
 //		}
 		flightDecksteps.waitABit(35000);
 	}
+	
+	
+	@Then("User validates Ease_Completion flow task successfully completed")
+	public void user_validates_ease_completion_flow_task_successfully_completed(io.cucumber.datatable.DataTable dataTable) {
+       List<List<String>> data = dataTable.asLists();
+       flightDecksteps.waitABit(40000);
+
+		String taskStatus = "In-Progress";
+		for (int i = 0; i <= data.size()-1; i++) {
+			String taskName = data.get(i).get(0);
+			for (int j = 0; j <= 4 & (!taskStatus.equals("Completed")); j++) {
+				flightDecksteps.userRefreshTaskPage();
+				flightDecksteps.waitABit(2000);
+				flightDecksteps.userValidateTaskName(taskName);
+				taskStatus = flightDecksteps.userValidateTaskStatus(taskName);
+				flightDecksteps.waitABit(2000);
+			}
+			taskStatus = "In-Progress";
+			flightDecksteps.userValidateTaskIsInCompletedStatus(taskName);
+		}
+
+		flightDecksteps.waitABit(40000);
+	}
+
+	@Then("User validates Mob_Completion_Notification flow task successfully completed")
+	public void user_validates_mob_completion_notification_flow_task_successfully_completed(io.cucumber.datatable.DataTable dataTable) {
+
+List<List<String>> data = dataTable.asLists();
+		
+		String taskStatus = "In-Progress";
+		for (int i = 0; i <= data.size()-1; i++) {
+			String taskName = data.get(i).get(0);
+			for (int j = 0; j <= 4 & (!taskStatus.equals("Completed")); j++) {
+				flightDecksteps.userRefreshTaskPage();
+				flightDecksteps.waitABit(2000);
+				flightDecksteps.userValidateTaskName(taskName);
+				taskStatus = flightDecksteps.userValidateTaskStatus(taskName);
+				flightDecksteps.waitABit(2000);
+			}
+			taskStatus = "In-Progress";
+			flightDecksteps.userValidateTaskIsInCompletedStatus(taskName);
+		}
+		
+		flightDecksteps.waitABit(5000);
+	}
+	
 
 	@When("User enters the install order Id and hit on search")
 	public void user_enters_the_install_order_id_and_hit_on_search() {		

@@ -1,8 +1,8 @@
 Feature: UNI feature
 
-  #Background: Port Acailability
-  #Given User open the mesh url
-  #Then User validates the mesh response
+  Background: Port Acailability
+  Given User open the mesh url
+  Then User validates the mesh response
   
   @UNI_Install_PerPort_SVCMUX 
   @TEST_EDPSF-52271

@@ -66,27 +66,31 @@ public class EaseSteps extends E2ESteps {
 //		options.setCapability(options.LOGGING_PREFS, logPrefs);
 //		new ChromeDriver(options);
 //		loginPage.getDevTools();
-//		System.out.println("EASE url=" + vfoUrl);
-//		String meshRes = System.getProperty("Mesh Response"); // get the url from memory
-//		if(meshRes.startsWith("NID"))
-//		{
-//			loginPage.openAt(vfoUrl);
-//			getDriver().manage().window().maximize();
-//			waitABit(1000);
-//			String tempcurrentURL = getDriver().getCurrentUrl(); // get the current url
-//			System.out.println("currentURL  is  " + tempcurrentURL); // // get the current url
-//			System.setProperty("URL.ID", tempcurrentURL); // set the url into memory
-//			String OrginalURL = System.getProperty("URL.ID"); // get the url from memory
-//			logger.info("OrginalURL  is  " + OrginalURL); // end of getting original url
-//			
-//		}else
-//		{
-//			//System.out.println("Mesh returns-"+meshRes);	
-//			E2ESteps.printInRedColor("Mesh returns "+meshRes, "- Don't have any port available to progress UNI/Combo order.So failing scripts");
-//			Assert.assertEquals("NID", meshRes);
-//			
-//		}
-
+		String tagName=System.getProperty("ScenarioName");
+		if(tagName.equals("UNI_Install_PerPort_SVCMUX")||tagName.equals("UNI_Install_PerService_SVCMUX")||tagName.equals("UNI_Install_PerPort_TLSMOE")||tagName.equals("UNI_Install_PerService_TLSMOE")||tagName.equals("EVC_COMBO_INSTALL")||tagName.equals("OVC_COMBO_INSTALL")||tagName.equals("EVC_GREEN_COMBO_INSTALL"))
+		{	
+		System.out.println("EASE url=" + vfoUrl);
+		String meshRes = System.getProperty("Mesh Response"); // get the url from memory
+		if(meshRes.startsWith("NID"))
+		{
+			loginPage.openAt(vfoUrl);
+			getDriver().manage().window().maximize();
+			waitABit(1000);
+			String tempcurrentURL = getDriver().getCurrentUrl(); // get the current url
+			System.out.println("currentURL  is  " + tempcurrentURL); // // get the current url
+			System.setProperty("URL.ID", tempcurrentURL); // set the url into memory
+			String OrginalURL = System.getProperty("URL.ID"); // get the url from memory
+			logger.info("OrginalURL  is  " + OrginalURL); // end of getting original url
+			
+		}else
+		{
+			//System.out.println("Mesh returns-"+meshRes);	
+			E2ESteps.printInRedColor("Mesh returns "+meshRes, "- Don't have any port available to progress UNI/Combo order.So failing scripts");
+			Assert.assertEquals("NID", meshRes);
+			
+		}
+		}
+		else {
 		loginPage.openAt(vfoUrl);
 		getDriver().manage().window().maximize();
 		waitABit(1000);
@@ -95,6 +99,7 @@ public class EaseSteps extends E2ESteps {
 		System.setProperty("URL.ID", tempcurrentURL); // set the url into memory
 		String OrginalURL = System.getProperty("URL.ID"); // get the url from memory
 		logger.info("OrginalURL  is  " + OrginalURL); // end of getting original url
+		}
 
 	}
 

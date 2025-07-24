@@ -1,5 +1,9 @@
 Feature: OVC Combo feature
 
+  Background: Port Acailability
+  Given User open the mesh url
+  Then User validates the mesh response
+  
   @OVC_COMBO_INSTALL
   Scenario Outline: TC-24-OVC Combo Install Order E2E Validation
     Given User is in EASE url
@@ -79,8 +83,12 @@ Feature: OVC Combo feature
     When User refresh the page
     #Then User validates Mesa_Test_OL flow task successfully completed
       #| MESA Test generator or reflector not supported - CM |
-    Then User validates the "<taskName6>" task is in "<status4>" status
-    And User validates the "<taskName7>" task is in "<status4>" status
+   #When User refresh the page
+    Then User validates Ease_Completion flow task successfully completed
+    | Ease Completion sent |
+      When User refresh the page
+    Then User validates Mob_Completion_Notification flow task successfully completed
+    | MOB Notification |  
 
     Examples: 
       | managedESP  | taskName1     | taskName2       | taskName3           | taskName4       | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   |
@@ -125,9 +133,11 @@ Feature: OVC Combo feature
     And User complete the task
     Then User validates "<taskName5>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName6>" task is in "<status4>" status
-    And User validates the "<taskName7>" task is in "<status4>" status
-
+    Then User validates Ease_Completion flow task successfully completed
+    | Ease Completion sent |
+      When User refresh the page
+    Then User validates Mob_Completion_Notification flow task successfully completed
+    | MOB Notification |  
     Examples: 
       | managedESP | taskName1     | taskName2       | taskName3           | taskName4       | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   | status5   |
       | MCI        | Get Mesh Path | Select Location | Activate UNI in ACT | CM-Test and Tag | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed | Cancelled |

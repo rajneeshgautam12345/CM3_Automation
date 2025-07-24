@@ -55,8 +55,12 @@ Feature: EVC Feature
     When User refresh the page
     Then User validates Mesa_Test_OL flow task successfully completed
       | MESA Test generator or reflector not supported - CM |
-    Then User validates the "<taskName6>" task is in "<status4>" status
-    And User validates the "<taskName7>" task is in "<status4>" status
+   When User refresh the page
+    Then User validates Ease_Completion flow task successfully completed
+    | Ease Completion sent |
+      When User refresh the page
+    Then User validates Mob_Completion_Notification flow task successfully completed
+    | MOB Notification |  
 
     Examples: 
        | managedESP | taskName6            | taskName7        | status1 | status2 | status3  | status4   |

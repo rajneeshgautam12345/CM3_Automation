@@ -99,6 +99,7 @@ public class EaseStepDefinition {
 
 	@When("User fillup order details for EVC_Combo")
 	public void user_fillup_order_details_for_evc_combo() {
+		
 		String pon = BaseStep.readExcelData("EVC_COMBO_Install", 1, 1) + AutomationConstants.randomNo;
 		String evcNC = BaseStep.readExcelData("EVC_COMBO_Install", 2, 1);
 		String evcNCI_ruid1 = BaseStep.readExcelData("EVC_COMBO_Install", 3, 1);
@@ -124,21 +125,21 @@ public class EaseStepDefinition {
 		String secNciValue = BaseStep.readExcelData("EVC_COMBO_Install", 20, 1);
 		
 		
-		System.out.println(pon);
-		System.out.println(specCode);
-		System.out.println(evcNC);
-		System.out.println(evcNCI_ruid1);
-		System.out.println(vact_ruid1);
-		System.out.println(ce_vlan_ruid1);
-		System.out.println(los1_ruid1);
-		System.out.println(evcBandwidth_ruid1);
-		System.out.println(evcsp_ruid2);
-		System.out.println(ruid2);
-		System.out.println(evcNCI_ruid2);
-		System.out.println(vact_ruid2);
-		System.out.println(ce_vlan_ruid2);
-		System.out.println(los_ruid2);
-		System.out.println(evcBandwidth_ruid2);
+//		System.out.println(pon);
+//		System.out.println(specCode);
+//		System.out.println(evcNC);
+//		System.out.println(evcNCI_ruid1);
+//		System.out.println(vact_ruid1);
+//		System.out.println(ce_vlan_ruid1);
+//		System.out.println(los1_ruid1);
+//		System.out.println(evcBandwidth_ruid1);
+//		System.out.println(evcsp_ruid2);
+//		System.out.println(ruid2);
+//		System.out.println(evcNCI_ruid2);
+//		System.out.println(vact_ruid2);
+//		System.out.println(ce_vlan_ruid2);
+//		System.out.println(los_ruid2);
+//		System.out.println(evcBandwidth_ruid2);
 		
 		easeSteps.enterOrderDetails(pon, "MS02", "N");
 		easeSteps.enterASRPageDetails("MCI", "08/25/2025", specCode, "EVC Combo Order", "", "");
@@ -296,7 +297,6 @@ public class EaseStepDefinition {
 
 	@When("User submit the {string} disconnect order")
 	public void user_submit_the_disconnect_order(String orderType) {
-
 		
 		if(orderType.equals("UNI"))
 		{
@@ -336,8 +336,7 @@ public class EaseStepDefinition {
 		easeSteps.clickOnSubmitOrderButton();
 		
 		}
-		
-	
+			
 	}
 	
 	@When("User submit the UNI transfer order by changing {string} field")

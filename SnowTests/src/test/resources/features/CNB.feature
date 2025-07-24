@@ -33,4 +33,27 @@ Feature: UNI feature
       | managedESP | ES | SpecCode | taskName1     | taskName2       | taskName3            | taskName4               | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   |
       | MCI        | S  | SVCMUX   | Get Mesh Path | Select Location | CNB Determine Action | Colorless Network Build | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |
 
+#@EVC_OVC_EndPoint_Cleanup
+ #Scenario Outline: TC-28-EVC or OVC or UNI Endpoint Cleanup
+    #Given User is in Autopilot url
+    #When User navigate to LNAAS_DELETE_TRANSACTION_ACT_TL_V1 flow in automatio Studio
+    #And User enters the details "<actIdentifierId>" and "<CorreleationId>"
+    #And User click on start to trigger the flow
+    #Then User validates workflow status
+  #
+    #Examples: 
+      #| actIdentifierId | CorreleationId |
+      #| MCI             |     2          |
+  #
+  #@UNI_Cleanup
+  #Scenario Outline: TC-29-UNI service Cleanup
+    #Given User is in Autopilot url
+    #When User navigate to LNAAS_DELETE_COLORLESS_PORT_SL_V1 flow in automatio Studio
+    #And User enters UNI details for cleanup "<CustomerName>" and "<serviceId>"
+    #And User click on start to trigger the flow
+    #Then User validates workflow status
+  #
+    #Examples: 
+      #| CustomerName                | serviceId         |
+      #| VERIZON COMMUNICATIONS      |29/KXGS/592136//MS |
   

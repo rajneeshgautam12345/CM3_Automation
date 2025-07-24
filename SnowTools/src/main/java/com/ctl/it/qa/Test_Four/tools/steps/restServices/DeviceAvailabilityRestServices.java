@@ -15,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.ctl.it.qa.Test_Four.tools.pages.common.LoginPage;
+import com.ctl.it.qa.Test_Four.tools.steps.E2ESteps;
 import com.ctl.it.qa.Test_Four.tools.steps.eservices.BaseStep;
 import com.ctl.it.qa.staf.xml.reader.IntDataContainer;
 
@@ -163,7 +164,7 @@ public class DeviceAvailabilityRestServices extends BaseStep {
 			String arr2[]= resp1.split("resourceType\":\"PathElement\",\"name\":");
 			String arr3[]= resp1.split("resourceType\":\"Port\",\"name\":");
 			System.out.println("Available Port-"+arr3[1].substring(1,2)+" Under Device-"+arr2[1].substring(1,14));
-			System.out.println("You are good to submit UNI/Combo order");
+			E2ESteps.printInRedColor("You are good to submit UNI/Combo order","");
 		}
 		else
 		{
