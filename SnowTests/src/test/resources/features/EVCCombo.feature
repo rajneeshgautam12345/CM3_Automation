@@ -1,7 +1,7 @@
 Feature: EVC Combo feature
-  Background: Port Acailability
-  Given User open the mesh url
-  Then User validates the mesh response
+  #Background: Port Acailability
+  #Given User open the mesh url
+  #Then User validates the mesh response
 
   @EVC_COMBO_INSTALL
   Scenario Outline: TC-17-EVC Combo Install Order E2E Validation -Passed
@@ -71,7 +71,8 @@ Feature: EVC Combo feature
     When User self assign and complete the "<taskName4>" task
     Then User validates "<taskName4>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName5>" task is in "<status2>" status
+    Then User validates Send_Manual_PTA flow task is in "<status2>" status
+      | Send Manual PTA |
     When User self assign and enter the "<taskName5>" task details
     And User complete the task
     Then User validates "<taskName5>" task successfully completed
@@ -82,16 +83,13 @@ Feature: EVC Combo feature
       When User refresh the page
     Then User validates Mob_Completion_Notification flow task successfully completed
     | MOB Notification |  
-    
-    #Then User validates the "<taskName6>" task is in "<status4>" status
-    #And User validates the "<taskName7>" task is in "<status4>" status
 
     Examples: 
       | managedESP | taskName1     | taskName3           | taskName4       | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   |
       | MCI        | Get Mesh Path | Activate UNI in ACT | CM-Test and Tag | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |
 
-@EVC_GREEN_COMBO_INSTALL
-  Scenario Outline: TC-17-EVC Combo Install Order E2E Validation -Passed
+ @EVC_GREEN_COMBO_INSTALL
+  Scenario Outline: TC-18-EVC Combo Install Order E2E Validation -Passed
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the existing "EVCCOMBO" PON
@@ -158,7 +156,8 @@ Feature: EVC Combo feature
     When User self assign and complete the "<taskName4>" task
     Then User validates "<taskName4>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName5>" task is in "<status2>" status
+    Then User validates Send_Manual_PTA flow task is in "<status2>" status
+      | Send Manual PTA |
     When User self assign and enter the "<taskName5>" task details
     And User complete the task
     Then User validates "<taskName5>" task successfully completed
@@ -169,16 +168,14 @@ Feature: EVC Combo feature
       When User refresh the page
     Then User validates Mob_Completion_Notification flow task successfully completed
     | MOB Notification |  
-    #When User refresh the page
-    #Then User validates the "<taskName6>" task is in "<status4>" status
-    #And User validates the "<taskName7>" task is in "<status4>" status
+
 
     Examples: 
       | managedESP | taskName1     | taskName3           | taskName4       | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   |
       | MCI        | Get Mesh Path | Activate UNI in ACT | CM-Test and Tag | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |
 
   @EVC_COMBO_SUPP2 
-  Scenario Outline: TC-18-EVC COMBO Supp2 Order Validation
+  Scenario Outline: TC-19-EVC COMBO Supp2 Order Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the install "EVCCombo" PON
@@ -205,7 +202,8 @@ Feature: EVC Combo feature
     When User self assign and complete the "<taskName4>" task
     Then User validates "<taskName4>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName5>" task is in "<status2>" status
+    Then User validates Send_Manual_PTA flow task is in "<status2>" status
+      | Send Manual PTA |
     When User self assign and enter the "<taskName5>" task details
     And User complete the task
     Then User validates "<taskName5>" task successfully completed
@@ -219,7 +217,7 @@ Feature: EVC Combo feature
 
   #When User enters the supp version "EVC Combo" Order Id and hit on search
   @EVC_COMBO_SUPP1
-  Scenario Outline: TC-19-EVC Combo Supp1 Validation
+  Scenario Outline: TC-20-EVC Combo Supp1 Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the install "EVCCombo" PON

@@ -36,6 +36,12 @@ public class EasePage extends SfaPage {
 //	public WebElementFacade radioSelectionOfPON;
 	@FindBy(xpath = "//input[@name='selectedRadio']")
 	public WebElementFacade radioSelectionOfPON;
+	
+	public String retrieveCustCode1="(//td/span/a[contains(.,'";
+	public String retrieveCustCode2="')]/../../..//td[2])[1]";
+	
+	
+	
 	@FindBy(xpath = "//td/span[contains(.,'End User Switched Ethernet')]/../../th/input[@name='selectedRadio']")
 	public WebElementFacade radioSelectionOfUNI_EVCCOMBO_PON;
 	@FindBy(xpath = "//td/span[contains(.,'Standalone EVC')]/../../th/input[@name='selectedRadio']")
@@ -64,8 +70,6 @@ public class EasePage extends SfaPage {
 	@FindBy(xpath = "//input[@name='activity']") // Common for UNI/EVC/combo
 	public WebElementFacade activityHeader;
 	
-	
-	
 	@FindBy(xpath = "(//td/span[contains(., 'DDD')]/../../../tr[2]/td/input)[1]") // common for EVC/UNI/Combo
 	public WebElementFacade dueDate;
 	@FindBy(xpath = "(//td/span[contains(., 'SPEC')]/../../../tr[2]/td/input)[1]")
@@ -76,7 +80,14 @@ public class EasePage extends SfaPage {
 	public WebElementFacade ecckt;
 	@FindBy(xpath = "(//td/span[contains(., 'TSP')]/../../../tr[2]/td/input)[1]")
 	public WebElementFacade tsp;
-
+	
+	@FindBy(xpath = "(//td/span[contains(., 'BILLNM')]/../../../tr[2]/td/input)[1]")
+	public WebElementFacade billingNum;
+	@FindBy(xpath = "(//td/span[contains(., 'ACNA')]/../../../tr[2]/td/input)[1]")
+	public WebElementFacade acna;
+	@FindBy(xpath = "(//td/span[contains(., 'CUST')]/../../../tr[2]/td/input)[1]")
+	public WebElementFacade cust;
+	
 	// SES Menu Details
 	@FindBy(xpath = "//td/img[@id='SESMenu']")
 	public WebElementFacade sesMenu;

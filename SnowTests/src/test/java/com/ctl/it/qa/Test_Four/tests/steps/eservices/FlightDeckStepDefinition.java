@@ -103,7 +103,7 @@ public class FlightDeckStepDefinition {
 					flightDecksteps.userValidateTaskName(taskName);
 					String taskStatus=flightDecksteps.userValidateTaskStatus(taskName);
 					//String taskStatus = flightDecksteps.userValidateTaskIsInCompletedStatus(taskName);
-					if (taskStatus.equals("In-Progress") || taskStatus.equals("Retry Submitted")) {
+					if (taskStatus.equals("In-Progress") || taskStatus.equals("Retry Submitted")||taskStatus.equals("Created")) {
 						flightDecksteps.waitABit(5000);
 						logger.info("Activate UNI in ACT task is in "+taskStatus+" state");
 						continue;
@@ -702,6 +702,21 @@ public class FlightDeckStepDefinition {
 		flightDecksteps.waitABit(35000);
 	}
 	
+	
+	@Then("User validates Send_Manual_PTA flow task is in {string} status")
+	public void user_validates_send_manual_pta_flow_task_is_in_status(String status, io.cucumber.datatable.DataTable dataTable) {
+		flightDecksteps.waitABit(40000);
+		flightDecksteps.userRefreshTaskPage();
+		List<List<String>> data = dataTable.asLists();
+		for (int i = 0; i <= data.size()-1; i++) {
+			String taskName = data.get(i).get(0);
+			flightDecksteps.userValidateTaskName(taskName);
+			flightDecksteps.userValidateTaskStatus(taskName,status);
+		}
+		flightDecksteps.waitABit(60000);
+	}
+
+
 	
 	@Then("User validates Ease_Completion flow task successfully completed")
 	public void user_validates_ease_completion_flow_task_successfully_completed(io.cucumber.datatable.DataTable dataTable) {

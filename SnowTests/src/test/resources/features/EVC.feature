@@ -32,13 +32,10 @@ Feature: EVC Feature
     Then User validates Business_Qualification flow task successfully completed
       | Business Qualification |
     When User refresh the page
-    
-    #Then User validates the "<CLC Management>" task is in "<status2>" status
-    
     Then User validates CLC_Management flow task successfully completed
-      |Manage Location|
-      |Manage Contacts|
-      #| CLC Management |
+      #|Manage Location|
+      #|Manage Contacts|
+      | CLC Management |
     When User refresh the page
     Then User validates VLAN_Processing flow task successfully completed
       | VLAN Pool Processing |

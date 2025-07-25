@@ -70,7 +70,7 @@ public class OrchestratorSteps extends E2ESteps {
 		System.out.println("Successfully entered service request Number");
 		orchestratorPage.retrieveServiceRequestButton.click();
 		logger.info("Successfully clicked on retrieve service Request button");
-		waitABit(3000);
+		waitABit(2000);
 
 	}
 
@@ -95,7 +95,7 @@ public class OrchestratorSteps extends E2ESteps {
 		getDriver().switchTo().frame(orchestratorPage.refreshFrame);
 		orchestratorPage.refreshButton.click();
 		System.out.println("Successfully clicked on refresh button..... ");
-		waitABit(7000);
+		waitABit(5000);
 		getDriver().switchTo().defaultContent();
 	}
 	

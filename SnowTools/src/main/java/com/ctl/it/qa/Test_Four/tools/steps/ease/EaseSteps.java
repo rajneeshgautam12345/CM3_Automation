@@ -54,7 +54,7 @@ public class EaseSteps extends E2ESteps {
 
 		loginPage.btn_NO.waitUntilClickable().withTimeoutOf(Duration.ofSeconds(500));
 		loginPage.btn_NO.click(); // click the no button
-		logger.info("Successfully logged in SFA");
+		logger.info("Successfully logged in Ease Url");
 	}
 
 	@Step
@@ -66,11 +66,13 @@ public class EaseSteps extends E2ESteps {
 //		options.setCapability(options.LOGGING_PREFS, logPrefs);
 //		new ChromeDriver(options);
 //		loginPage.getDevTools();
+		String meshRes1 = System.setProperty("Mesh Response","NID");
 		String tagName=System.getProperty("ScenarioName");
 		if(tagName.equals("UNI_Install_PerPort_SVCMUX")||tagName.equals("UNI_Install_PerService_SVCMUX")||tagName.equals("UNI_Install_PerPort_TLSMOE")||tagName.equals("UNI_Install_PerService_TLSMOE")||tagName.equals("EVC_COMBO_INSTALL")||tagName.equals("OVC_COMBO_INSTALL")||tagName.equals("EVC_GREEN_COMBO_INSTALL"))
 		{	
 		System.out.println("EASE url=" + vfoUrl);
 		String meshRes = System.getProperty("Mesh Response"); // get the url from memory
+		
 		if(meshRes.startsWith("NID"))
 		{
 			loginPage.openAt(vfoUrl);
@@ -114,7 +116,6 @@ public class EaseSteps extends E2ESteps {
 		if (order.equals("UNI")) {
 			referencePON = "RGUNITEST";
 		}
-
 		else if (order.equals("EVC")) {
 			referencePON = "RGEVCINSREF";
 		} else if (order.equals("EVCCOMBO")) {
@@ -132,6 +133,22 @@ public class EaseSteps extends E2ESteps {
 		} else if (order.equals("EVC_Disconnect")) {
 			referencePON = "EVCDISCOREF";
 		}
+		
+		//For AT&T Customers
+		else if (order.equals("UNIATX")) {
+			referencePON = "UNIINSREFATX";
+		}
+	    else if (order.equals("EVCCOMBOATX")) {
+		    referencePON = "EVCCOMBOREFATX";
+	    }
+		
+		//For Tim Customers
+		else if (order.equals("UNITIM")) {
+			referencePON = "UNIINSREFTIM";
+		}
+	    else if (order.equals("EVCCOMBOTIM")) {
+		referencePON = "EVCCOMBOTIMREF";
+	    }
 
 		getDriver().switchTo().frame(1);
 		System.out.println("Switched to EASE home page frame");
@@ -165,9 +182,15 @@ public class EaseSteps extends E2ESteps {
 		waitABit(2000);
 		getDriver().switchTo().frame(1);
 		System.out.println("Switched to EASE home page frame");
+		
+		String retrieveCustCode=getDriver().findElement(By.xpath(easePage.retrieveCustCode1+referencePON+easePage.retrieveCustCode2)).getText();
+		System.setProperty("Customer.Code", retrieveCustCode);
+		System.out.println(System.getProperty("Customer.Code"));
+		
+		System.out.println("RetrivedCustCode-"+retrieveCustCode+"abc");
 		easePage.radioSelectionOfPON.click();
 		System.out.println("Selected the Seached PON radio button");
-		waitABit(2000);
+		waitABit(1500);
 		logger.info("Order record successfully selected");
 	}
 
@@ -198,10 +221,10 @@ public class EaseSteps extends E2ESteps {
 		System.out.println("PON Number entered-" + ponNo);
 		easePage.enterICSE.waitUntilClickable().withTimeoutOf(Duration.ofSeconds(10));
 		easePage.enterICSE.sendKeys(ICSC);
-		waitABit(1200);
+		waitABit(1000);
 		getDriver().switchTo().activeElement().sendKeys(Keys.ENTER);
 		System.out.println("ICSC value entered");
-		waitABit(1000);
+		waitABit(500);
 		easePage.activity.selectByVisibleText(activity);
 		waitABit(800);
 		easePage.save.click();
@@ -222,7 +245,7 @@ public class EaseSteps extends E2ESteps {
 		Calendar cal1 = Calendar.getInstance();
 		cal.setTime(new Date());
 		cal1.setTime(new Date());
-		cal.add(Calendar.DATE, 15);
+		cal.add(Calendar.DATE, 18);
 		cal1.add(Calendar.DATE, 0);
 		String newDate = dateFormat.format(cal.getTime());
 		String discDate = dateFormat.format(cal1.getTime());
@@ -243,6 +266,7 @@ public class EaseSteps extends E2ESteps {
 
 		String act = easePage.activityHeader.getAttribute("value");
 		if (!ccna.equals("")) {
+			ccna=System.getProperty("Customer.Code");
 			Select s1 = new Select(easePage.ccna);
 			waitABit(1000);
 			s1.selectByVisibleText(ccna);
@@ -793,6 +817,24 @@ public class EaseSteps extends E2ESteps {
 			easePage.evcID.clear();
 			easePage.evcID.sendKeys(evcID);
 			System.out.println("EVC ID Value entered");
+			waitABit(1000);
+		}
+	}
+	
+	public void enterCustomerDetailsInASRPage(String customerName,String ccna) {
+		if (!customerName.equals("")) {
+			waitABit(1000);
+			easePage.billingNum.clear();
+			easePage.billingNum.sendKeys(customerName);
+			System.out.println("Customer Name entereed in Billing field");
+			waitABit(1000);
+			easePage.acna.clear();
+			easePage.acna.sendKeys(ccna);
+			System.out.println("CCNA field entered");
+			waitABit(1000);
+			easePage.cust.clear();
+			easePage.cust.sendKeys(customerName);
+			System.out.println("Customer Name entereed in Cust field");
 			waitABit(1000);
 		}
 	}

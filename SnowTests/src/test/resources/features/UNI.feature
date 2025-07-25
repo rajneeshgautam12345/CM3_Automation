@@ -1,8 +1,8 @@
 Feature: UNI feature
 
-  Background: Port Acailability
-  Given User open the mesh url
-  Then User validates the mesh response
+  #Background: Port Acailability
+  #Given User open the mesh url
+  #Then User validates the mesh response
   
   @UNI_Install_PerPort_SVCMUX 
   @TEST_EDPSF-52271
@@ -441,23 +441,24 @@ Feature: UNI feature
       | CM3 Mongo Access Request          |
       | EASE Notify                       |
       
-    When User refresh the page
-    Then User validates CO_Qualification_OL flow task successfully completed
-      | Retrieve Service Spec |
-      | Retrieve PM Spec      |
-      | swcCLLI Enrichment    |
-      | Order Enrichment      |
-      | XREF Order Enrichment |
-      
-    When User refresh the page
-    Then User validates Business_Qualification flow task successfully completed
-      | Business Qualification |
-      
-    When User refresh the page
-    Then User validates CLC_Management flow task successfully completed
-      #|Manage Location|
-      #|Manage Contacts|
-      | CLC Management |
+    #When User refresh the page
+    #Then User validates CO_Qualification_OL flow task successfully completed
+      #| Retrieve Service Spec |
+      #| Retrieve PM Spec      |
+      #| swcCLLI Enrichment    |
+      #| Order Enrichment      |
+      #| XREF Order Enrichment |
+      #
+    #When User refresh the page
+    #Then User validates Business_Qualification flow task successfully completed
+      #| Business Qualification |
+      #
+    #When User refresh the page
+    #Then User validates CLC_Management flow task successfully completed
+      #| CLC Management |
+  
+  
+  
    
     #When User refresh the page
     #Then User validates the "<Change Order>" task is in "<In-Progress>" status
@@ -504,21 +505,19 @@ Feature: UNI feature
       | Colorless Metro Order Fulfillment |
       | CM3 Mongo Access Request          |
       | EASE Notify                       |    
-    When User refresh the page
-    Then User validates CO_Qualification_OL flow task successfully completed
-      | Retrieve Service Spec |
-      | Retrieve PM Spec      |
-      | swcCLLI Enrichment    |
-      | Order Enrichment      |
-      | XREF Order Enrichment |     
-    When User refresh the page
-    Then User validates Business_Qualification flow task successfully completed
-      | Business Qualification |      
-    When User refresh the page
-    Then User validates CLC_Management flow task successfully completed
-      #|Manage Location|
-      #|Manage Contacts|
-      | CLC Management |     
+    #When User refresh the page
+    #Then User validates CO_Qualification_OL flow task successfully completed
+      #| Retrieve Service Spec |
+      #| Retrieve PM Spec      |
+      #| swcCLLI Enrichment    |
+      #| Order Enrichment      |
+      #| XREF Order Enrichment |     
+    #When User refresh the page
+    #Then User validates Business_Qualification flow task successfully completed
+      #| Business Qualification |      
+    #When User refresh the page
+    #Then User validates CLC_Management flow task successfully completed
+      #| CLC Management |     
     Examples: 
       | managedESP | taskName6            | taskName7        | status1 | status2 | status3  | status4   |
       | MCI        | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |

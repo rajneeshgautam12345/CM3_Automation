@@ -47,7 +47,7 @@ public class FlightDeckSteps extends E2ESteps {
 	@Step
 	public void logs_in_flightDeck() {
 		getDriver().quit();
-		waitABit(90000);
+		waitABit(60000);
 		String userType = "Valid";
 		String FDUrl = envData.getFieldValue("FlightDeck");
 		String myUser = envData.getContainer("LoginPage").getContainer(userType).getFieldValue("tbx_uname");
@@ -93,7 +93,7 @@ public class FlightDeckSteps extends E2ESteps {
 	@Step
 	public void searchOrderId() {
 
-		//String orderId = "NAGEVCCOMBO23JU";
+		//String orderId = "ATUNIIN07259";
 	    String orderId = EaseSteps.pon_Number;
 	    System.setProperty("PON.NO", orderId);
 		flightDeck.orderIDSearch.waitUntilClickable().withTimeoutOf(Duration.ofSeconds(60));

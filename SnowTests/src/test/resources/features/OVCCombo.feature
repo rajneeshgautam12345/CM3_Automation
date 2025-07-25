@@ -5,7 +5,7 @@ Feature: OVC Combo feature
   Then User validates the mesh response
   
   @OVC_COMBO_INSTALL
-  Scenario Outline: TC-24-OVC Combo Install Order E2E Validation
+  Scenario Outline: TC-25-OVC Combo Install Order E2E Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the existing "OVCCOMBO" PON
@@ -76,7 +76,8 @@ Feature: OVC Combo feature
     When User self assign and complete the "<taskName4>" task
     Then User validates "<taskName4>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName5>" task is in "<status2>" status
+    Then User validates Send_Manual_PTA flow task is in "<status2>" status
+      | Send Manual PTA |
     When User self assign and enter the "<taskName5>" task details
     And User complete the task
     Then User validates "<taskName5>" task successfully completed
@@ -101,7 +102,7 @@ Feature: OVC Combo feature
 
   @OVC_COMBO_SUPP2 
   @TEST_EDPSF-52271
-  Scenario Outline: TC-25-OVC COMBO Supp2 Order Validation-Passed
+  Scenario Outline: TC-26-OVC COMBO Supp2 Order Validation-Passed
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the install "OVCCombo" PON
@@ -128,7 +129,8 @@ Feature: OVC Combo feature
     When User self assign and complete the "<taskName4>" task
     Then User validates "<taskName4>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName5>" task is in "<status2>" status
+    Then User validates Send_Manual_PTA flow task is in "<status2>" status
+      | Send Manual PTA |
     When User self assign and enter the "<taskName5>" task details
     And User complete the task
     Then User validates "<taskName5>" task successfully completed
@@ -143,7 +145,7 @@ Feature: OVC Combo feature
       | MCI        | Get Mesh Path | Select Location | Activate UNI in ACT | CM-Test and Tag | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed | Cancelled |
 
   @OVC_COMBO_SUPP1
-  Scenario Outline: TC-26-OVC Combo Supp1 Order Validation
+  Scenario Outline: TC-27-OVC Combo Supp1 Order Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the install "OVCCombo" PON

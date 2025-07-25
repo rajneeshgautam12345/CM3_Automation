@@ -168,6 +168,8 @@ public class FullSanitySteps extends BaseStep {
 	
 	
 		getDriver().findElement(By.xpath("//textarea[@id='job-variables-editor']")).sendKeys(UNIDeletePayload);
+		
+		waitABit(60000);
 			
 	}
 	

@@ -27,23 +27,24 @@ Feature: UNI feature
     When User enters the details and retry the task
     Then User validates "<taskName2>" task successfully completed
     When User refresh the page
-    Then User validates the "<taskName3>" task is in "<status3>" status
-    Then User validates the "<taskName4>" task is in "<status3>" status
-    Examples: 
-      | managedESP | ES | SpecCode | taskName1     | taskName2       | taskName3            | taskName4               | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   |
-      | MCI        | S  | SVCMUX   | Get Mesh Path | Select Location | CNB Determine Action | Colorless Network Build | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |
+    Then User validates the "<taskName3>" task is in "<status5>" status
+    Then User validates the "<taskName4>" task is in "<status5>" status
 
-#@EVC_OVC_EndPoint_Cleanup
- #Scenario Outline: TC-28-EVC or OVC or UNI Endpoint Cleanup
-    #Given User is in Autopilot url
-    #When User navigate to LNAAS_DELETE_TRANSACTION_ACT_TL_V1 flow in automatio Studio
-    #And User enters the details "<actIdentifierId>" and "<CorreleationId>"
-    #And User click on start to trigger the flow
-    #Then User validates workflow status
+    Examples: 
+      | managedESP | ES | SpecCode | taskName1     | taskName2       | taskName3            | taskName4               | taskName5       | taskName6            | taskName7        | status1 | status2 | status3  | status4   |status5    |
+      | MCI        | S  | SVCMUX   | Get Mesh Path | Select Location | CNB Determine Action | Colorless Network Build | Send Manual PTA | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |In-Progress|
+
+  #@EVC_OVC_EndPoint_Cleanup
+  #Scenario Outline: TC-28-EVC or OVC or UNI Endpoint Cleanup
+  #Given User is in Autopilot url
+  #When User navigate to LNAAS_DELETE_TRANSACTION_ACT_TL_V1 flow in automatio Studio
+  #And User enters the details "<actIdentifierId>" and "<CorreleationId>"
+  #And User click on start to trigger the flow
+  #Then User validates workflow status
   #
-    #Examples: 
-      #| actIdentifierId | CorreleationId |
-      #| MCI             |     2          |
+  #Examples:
+  #| actIdentifierId | CorreleationId |
+  #| MCI             |     2          |
   #
   #@UNI_Cleanup
   #Scenario Outline: TC-29-UNI service Cleanup
@@ -52,8 +53,7 @@ Feature: UNI feature
     #And User enters UNI details for cleanup "<CustomerName>" and "<serviceId>"
     #And User click on start to trigger the flow
     #Then User validates workflow status
-  #
+#
     #Examples: 
-      #| CustomerName                | serviceId         |
-      #| VERIZON COMMUNICATIONS      |29/KXGS/592136//MS |
-  
+      #| CustomerName        | serviceId          |
+      #| AT&T COMMUNICATIONS | 29/KXGS/595317//MS |

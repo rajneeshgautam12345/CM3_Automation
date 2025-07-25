@@ -1,7 +1,7 @@
 Feature: OVC Feature
 
   @OVC_INSTALL
-  Scenario Outline: TC-20-Standalone OVC Instal Order E2E Validation
+  Scenario Outline: TC-21-Standalone OVC Instal Order E2E Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the existing "OVC" PON
@@ -62,7 +62,7 @@ Feature: OVC Feature
       | MCI         | Ease Completion sent | MOB Notification | Created | Ready   | Assigned | Completed |
 
  @OVC_SUPP2
-  Scenario Outline: TC-21-Standalone OVC Supp2 Validation
+  Scenario Outline: TC-22-Standalone OVC Supp2 Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the install "OVC" PON
@@ -74,7 +74,7 @@ Feature: OVC Feature
  
  
   @OVC_SUPP1
-  Scenario Outline: TC-22-Standalone OVC Supp1 Validation
+  Scenario Outline: TC-23-Standalone OVC Supp1 Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the install "OVC" PON
@@ -87,7 +87,7 @@ Feature: OVC Feature
       
       
        @OVC_DISCO
-  Scenario Outline: TC-23-Standalone OVC Disconnect Order Validation
+  Scenario Outline: TC-24-Standalone OVC Disconnect Order Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
     And User search the existing "OVC_Disconnect" PON    
