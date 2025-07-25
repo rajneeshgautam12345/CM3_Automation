@@ -1,7 +1,7 @@
 Feature: UNI feature
 
   @CNB 
-  @TEST_EDPSF-52271
+  @TEST_EDPSF-107553
   Scenario Outline: TC-27-CNB Install per port with Spec Code- SVCMUX Order E2E Validation
     Given User is in EASE url
     When User logs in as a "Valid" user
